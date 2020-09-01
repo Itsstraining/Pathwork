@@ -127,6 +127,6 @@
   },
   "defaultProject": "Pathwork",
   "cli": {
-    "analytics": false
+    "analytics": "7589ea99-a9a3-4b91-ae80-1b4ec5bd1eca"
   }
 }

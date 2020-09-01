@@ -4,15 +4,16 @@
 
 export const environment = {
   production: false,
+  endpoint: "http://127.0.0.1:7762",
   firebase:{
-    apiKey: "AIzaSyDDDRO_MjkqoUIJ-n39lq1LEgFUOA2tPaU",
-    authDomain: "computer1712.firebaseapp.com",
-    databaseURL: "https://computer1712.firebaseio.com",
-    projectId: "computer1712",
-    storageBucket: "computer1712.appspot.com",
-    messagingSenderId: "690038391044",
-    appId: "1:690038391044:web:5832854917d538e3cdd051",
-    measurementId: "G-75N77J8HC3"
+    apiKey: "AIzaSyBYsO2FQUGwRjucjYOSXGG9zs7DXFbfQ_o",
+    authDomain: "trello-server-326e2.firebaseapp.com",
+    databaseURL: "https://trello-server-326e2.firebaseio.com",
+    projectId: "trello-server-326e2",
+    storageBucket: "trello-server-326e2.appspot.com",
+    messagingSenderId: "88335362408",
+    appId: "1:88335362408:web:b9990ca05a25de24de0edd",
+    measurementId: "G-SF09JZ5EBE"
   }
 };
 

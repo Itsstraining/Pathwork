@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Pathwork"
+    }
+  },
+  "defaultProject": "Pathwork",
+  "cli": {
+    "analytics": "833f4976-2cac-4b46-8879-53579364c2bb"
+  }
 }

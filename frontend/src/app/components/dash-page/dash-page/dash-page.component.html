@@ -1,0 +1,26 @@
+<!-- Box -->
+<div class="box">
+  <div *ngFor="let it of dashDB ">
+      <div class="container dash-box right-m ">
+          <div class="add-box box1 " style="font-weight: 700;">{{it.boxName.trim().toUpperCase()}}</div>
+          <app-dash-box [dbtam]="it.content"></app-dash-box>
+      </div>
+  </div>
+  <!-- Ô Input -->
+  <div class="right-m" *ngIf="toggleIpt" (click)="toggle()">
+      <button class="add-btn" style="margin-right:20px" mat-flat-button>Add new task</button>
+  </div>
+  <div *ngIf="!toggleIpt">
+      <div class="container dash-box right-m">
+          <div class="ipt-con ">
+              <input class="add-box box1 ipt " placeholder="Write your task name here " [(ngModel)]="dboxName">
+          </div>
+          <div class="dash-box box3 ">
+              <div class="dash-box box-con ">
+                  <button (click)="newBox() " mat-flat-button style="color: #52b1b1;margin-bottom: 6px; ">Add new task</button>
+                  <mat-icon (click)="toggle()" class="point " aria-hidden=" false " aria-label="Example home icon ">clear</mat-icon>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

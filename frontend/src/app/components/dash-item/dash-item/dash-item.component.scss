@@ -1,0 +1,94 @@
+body {
+  font-size: 14rem;
+}
+
+.box1 {
+  display: inline-flex;
+  justify-content: start;
+  width: 250px;
+  // padding: 3px 8px 3px;
+}
+
+.box2 {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 6px;
+}
+
+.add-box {
+  max-width: 400px;
+  background-color: white;
+  overflow: hidden;
+  padding: 6px 8px 3px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  margin-top: 2px;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  padding-top: 3px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.textbox {
+  height: 100px;
+}
+
+.btn {
+  border: 0;
+  background-color: #52b1b1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 3px;
+  font-weight: 550;
+  align-items: center;
+  padding: 0px;
+  width: 100px;
+  margin-right: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+textarea {
+  height: 100px;
+  width: 250px;
+  max-width: 250px;
+  max-height: 100px;
+  font-size: inherit;
+  font-weight: 400;
+  outline: none;
+  font-family: inherit;
+  padding: 10px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  border: none;
+}
+
+.point {
+  cursor: pointer;
+}
+
+.point:hover {
+  opacity: 0.9;
+}
+
+.add-tag {
+  max-width: 400px;
+  background-color: white;
+  padding: 12px 8px 12px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  margin: 6px 0 6px;
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  width: 250px;
+  background-color: white;
+  color: #52b1b1;
+}

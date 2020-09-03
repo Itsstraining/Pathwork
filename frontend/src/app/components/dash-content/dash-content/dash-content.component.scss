@@ -1,0 +1,80 @@
+.box1 {
+  justify-content: start;
+  width: 250px;
+  overflow-wrap: break-word;
+}
+
+.box2 {
+  justify-content: start;
+  // width: 250px;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  max-width: 370px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  width: 100%
+}
+
+.check-box {
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-box>button {
+  width: 45%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  color: white;
+}
+
+.add-box {
+  margin: 2px 0 0;
+  max-width: 370px;
+  background-color: white;
+  overflow: hidden;
+  padding: 6px 8px 3px;
+  // border-radius: 3px;
+  box-shadow: 0 2px 0 rgba(9, 30, 66, .25);
+}
+
+.tool {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  // border-top: 1px solid black;
+}
+
+.f {
+  display: flex;
+  flex-direction: row;
+}
+
+.tool1 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 8px;
+  margin-top: 2px;
+  padding: 0px 8px 3px;
+  max-width: 370px;
+}
+
+.tool-box {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.done {
+  background-color: #72d07c;
+  color: white;
+}

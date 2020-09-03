@@ -1,0 +1,58 @@
+
+<a style="display:flex;justify-content: center;text-align: center; margin-left: -10px">
+  <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" width="100px" height="100px" />
+</a>
+<div class="container" style="margin-top: 20px; display: flex; text-align: center;justify-content: center">
+  <form class="main1" (ngSubmit)='onSubmit()'>
+      <div id='main'>
+          <div class="example-container">
+              <mat-form-field appearance="fill" style="width: 300px;">
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill" style="width: 301px;">
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+              </mat-form-field>
+          </div>
+          <!-- <input type="checkbox" id="remember-me" name="Nhớ mật Khẩu" value="Nhớ mật khẩu">
+          <label class="checkbox" for="remember-me" style="margin-left: 100px"> Nhớ mật khẩu</label><br>
+          <a class="forgot" routerLink='' style="font-size:15px;display: flex;
+              justify-content: flex-end;margin-right: 94px; ">Quên Mật Khẩu ?
+          </a> -->
+          <button id='login' mat-raised-button color="primary"
+              style="width: 308px;margin-right: 2px;font-size:large;color:black;outline:none;" (click)='signin()'>Đăng nhập</button>
+          <br>
+          <div style="margin-top: 15px;">
+              <h2 style="margin-left: 10px;"> Hoặc</h2>
+          </div>
+          <button mat-raised-button id='google' style="width: 310px;font-size:large;outline:none;"
+              *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px">Đăng nhập với Google</button>
+          <h3 id='dangki'>Nếu bạn chưa có tài khoản -><button style="font-size: large;outline:none;" mat-button
+                  (click)="openDialog()">Đăng kí</button></h3>
+
+      </div>
+
+      <footer  style="color:black; font-size: 1.25em;"> <br>
+
+           bạn sẽ phải đăng ký và chấp thuận
+           <br>
+          <a routerLink='' target="_blank">các Điều khoản & Điều kiện</a> và
+          <br>
+          <a routerLink='' target="_blank"> Chính sách Quyền riêng tư của Trello.</a>
+      </footer>
+  </form>
+</div>
+
+
+
+
+
+

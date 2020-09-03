@@ -9,6 +9,8 @@ import { DashItemComponent } from './components/dash-item/dash-item/dash-item.co
 import { DashPageComponent } from './components/dash-page/dash-page/dash-page.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UiModule } from './modules/ui/ui.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,7 @@ import { UiModule } from './modules/ui/ui.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DragDropModule,
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,

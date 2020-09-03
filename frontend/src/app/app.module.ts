@@ -10,7 +10,6 @@ import { DashPageComponent } from './components/dash-page/dash-page/dash-page.co
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UiModule } from './modules/ui/ui.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-=======
 import { SigninComponent } from './pages/login/signin/signin/signin.component';
 import { SigoutComponent } from './pages/login/signout/sigout/sigout.component';
 

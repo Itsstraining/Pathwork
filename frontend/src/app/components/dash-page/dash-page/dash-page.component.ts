@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dashbox } from '../../../models/dask-item.model'
-import {DashBoardService} from '../../../services/dash-board.service'
+import {DashBoardService} from '../../../service/dash-board.service'
 @Component({
   selector: 'app-dash-page',
   templateUrl: './dash-page.component.html',

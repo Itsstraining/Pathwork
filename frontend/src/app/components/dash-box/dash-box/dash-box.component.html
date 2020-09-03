@@ -1,8 +1,24 @@
 <div cdkDropListGroup>
   <div class="example-container">
-      <div cdkDropList [cdkDropListData]="dbtam" class="example-list" (cdkDropListDropped)="drop($event)">
-          <app-dash-content *ngFor="let item of dbtam" [content]="item"></app-dash-content>
-          <app-dash-item (onAddEvent)="pushdtb($event)"></app-dash-item>
+
+    <div cdkDropList [cdkDropListData]='dbtam' class="example-list" (cdkDropListDropped)="drop($event) ">
+      <div class="example-box" *ngFor="let item of dbtam" cdkDrag>
+        <app-dash-content [content]="item"></app-dash-content>
       </div>
+      <app-dash-item (onAddEvent)="pushdtb($event)"></app-dash-item>
+    </div>
+
+  </div>
+
+
+  <div class="example-container">
+
+    <div cdkDropList [cdkDropListData]='dbtam' class="example-list" (cdkDropListDropped)="drop($event) ">
+      <div class="example-box" *ngFor="let item of dbtam" cdkDrag>
+        <app-dash-content [content]="item"></app-dash-content>
+      </div>
+      <app-dash-item (onAddEvent)="pushdtb($event)"></app-dash-item>
+    </div>
+
   </div>
 </div>

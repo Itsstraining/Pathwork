@@ -10,6 +10,8 @@ export class DashBoxComponent implements OnInit {
   pushdtb(n:string){
     this.dbtam.push(n);
   }
+
+
   constructor() { }
 
   ngOnInit(): void {

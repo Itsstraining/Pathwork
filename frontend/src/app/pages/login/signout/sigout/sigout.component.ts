@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core'
 
 @Component({
   selector: 'app-sigout',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
+
 
 }

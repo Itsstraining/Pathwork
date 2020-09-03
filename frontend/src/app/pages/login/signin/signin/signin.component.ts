@@ -55,11 +55,12 @@ export class SigninComponent implements OnInit {
   }
   public async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
-    const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['./navbar']);
-    return this.authService.updateUserData(credential.user)
+    const credential = await this.afAuth.signInWithPopup(provider)
+
+
     .then(()=>{
       this.snackBar.open('Success!','OK',{duration:2000});
+      this.router.navigate(['./navbar']);
     })
     .catch((err)=>{
       this.snackBar.open(err,'OK',{duration:2000});

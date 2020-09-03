@@ -26,7 +26,9 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
   declarations: [
     AppComponent,
 
-    SigninComponent
+    SigninComponent,
+    SigoutComponent,
+
   ],
   imports: [
 

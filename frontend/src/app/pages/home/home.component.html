@@ -1,58 +1,28 @@
-<!-- <div class="a">
-  <mat-toolbar>
-    <div>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>home</mat-icon>
-  </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>dashboard</mat-icon>
-  </button>
+<div style="background-color: whitesmoke">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                              <mat-toolbar>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE" style="width:40px; height:40px">
+                </button>
+                <span>Pathwork</span>
+                <span class="example-spacer"></span>
+                <button [routerLink]="['/signin']" routerLinkActive="router-link-active"  style="font-size:20px" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                  Login
+                </button>
+
+              </mat-toolbar>
+
+
+
+
+
+            <div>
+
+        </div>
+
+
     </div>
 
-    <span id='logo'>
-      <img style="width: 50px" src="../../assets/images/checkmark+clipboard+document+list+tracklist+icon-1320167911544323810.png" alt="">
-      Pathwork
-    </span>
-
-
-  </mat-toolbar>
 </div>
-<div class="container">
-<app-sidebar></app-sidebar>
-
-
-</div> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-
-        <mat-toolbar>
-          <div>
-              <button (click)="gotoSth('home')" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>home</mat-icon>
-        </button>
-              <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="gotoSth('menu')">
-          <mat-icon>dashboard</mat-icon>
-        </button>
-          </div>
-
-          <span id='logo'>
-            <img style="width: 50px" src="../../assets/images/checkmark+clipboard+document+list+tracklist+icon-1320167911544323810.png" alt="">
-            Pathwork
-          </span>
-          <button>Login</button>
-
-
-
-
-        </mat-toolbar>
-
-
-
-    </div>
-
-  </div>
-
-
-

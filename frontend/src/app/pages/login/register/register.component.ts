@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import{FormControl,FormGroup, Validators} from '@angular/forms'
 import {MatDialog} from '@angular/material/dialog'
-import {AuthService} from '../../../../service/auth.service'
+import {AuthService} from '../../../service/auth.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-
-
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class SigninComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   public nameGroup= new FormGroup({
     userControl: new FormControl('',Validators.required),
     emailControl : new FormControl('',Validators.email),
@@ -26,14 +24,9 @@ export class SigninComponent implements OnInit {
       public snackBar : MatSnackBar,
       public router :Router,
       public afAuth : AngularFireAuth,
-  ) {
-
-  }
-
+  ) { }
 
   ngOnInit(): void {
-  }
-  onSubmit (){
     console.log(this.nameGroup.value);
   }
   hide = true;
@@ -48,7 +41,7 @@ export class SigninComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
   openDialog() {
-    const dialogRef = this.dialog.open(SigninComponent,{});
+    const dialogRef = this.dialog.open(RegisterComponent,{});
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -79,4 +72,5 @@ export class SigninComponent implements OnInit {
     });
 
   }
+
 }

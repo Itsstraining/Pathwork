@@ -70,7 +70,7 @@ import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireModule,
     AngularFireAuthModule,
-
+    //NgbModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

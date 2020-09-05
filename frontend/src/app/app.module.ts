@@ -36,6 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './pages/login/register/register.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-
+    MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,

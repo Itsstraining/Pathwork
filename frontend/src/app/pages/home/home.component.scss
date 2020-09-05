@@ -1,3 +1,43 @@
 .example-spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+h1 {
+    font-size: xx-large;
+    line-height: 1.3;
+}
+
+p {
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: skyblue;
+    max-width: auto;
+}
+
+.paging {
+    max-width: 1200px;
+    max-height: 500px;
+    display: flex;
+    justify-content: left;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.example-card2 {
+    max-width: 1000px;
+    align-items: flex-end;
+    display: -webkit-box;
+    line-height: 2.2;
+    font-size: x-large;
 }

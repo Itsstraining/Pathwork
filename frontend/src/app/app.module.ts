@@ -8,7 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UiModule } from './modules/ui/ui.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SigninComponent } from './pages/login/signin/signin/signin.component';
-import { SigoutComponent } from './pages/login/signout/sigout/sigout.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -23,22 +23,39 @@ import {BoardComponent} from './Components/board/board.component';
 import {ListComponent} from './Components/list/list.component';
 import {DialogComponent} from './Components/dialog/dialog.component';
 import {DialogContentComponent} from './Components/dialog-content/dialog-content.component';
+import {MatSelectModule} from '@angular/material/select';
+
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { HomeComponent } from './pages/home/home.component';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './pages/login/register/register.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
     SigninComponent,
-    SigoutComponent,
+
     BoardComponent,
     ListComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    NavbarComponent,
+    SidebarComponent,
+    HomeComponent,
+    RegisterComponent,
+    NavbarfakeComponent,
+
 
 
   ],
@@ -53,16 +70,23 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireModule,
     AngularFireAuthModule,
+
     MatToolbarModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatDialogModule,
+
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatSelectModule,
+    MatCardModule,
+
   ],
 
   providers: [],

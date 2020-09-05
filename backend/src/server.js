@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 var admin = require("firebase-admin");
 const cors = require("cors");
 var serviceAccount = require("../key.json");
+// const userRouter = require("./userrouter/iduser.router")
+// const userRouter = require("./userrouter/nameuser.router")
+// const userRouter = require("./userrouter/passworduser.router")
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -13,6 +16,8 @@ app.get("/ping", (req, res) => {
   res.send("hello");
 });
 app.use(bodyParser());
+app.use('/v1/user',require('./userrouter/user.router'));
+
 app.listen(7762, "127.0.0.1", () => {
   console.log("server is running");
 });
@@ -64,6 +69,7 @@ app.get("/v1/board", async (req, res) => {
     data: data,
   });
 });
+
 
 app.put("/v1/board/:task", async (req, res) => {
   const { task } = req.params;

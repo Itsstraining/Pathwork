@@ -19,26 +19,26 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import {BoardComponent} from './Components/board/board.component';
+import {ListComponent} from './Components/list/list.component';
+import {DialogComponent} from './Components/dialog/dialog.component';
+import {DialogContentComponent} from './Components/dialog-content/dialog-content.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
-import {DashBoxComponent} from '../app/components/dash-box/dash-box/dash-box.component';
-import {DashContentComponent} from './components/dash-content/dash-content/dash-content.component';
-import {DashItemComponent} from './components/dash-item/dash-item/dash-item.component';
-import {DashPageComponent} from './components/dash-page/dash-page/dash-page.component'
+
 @NgModule({
   declarations: [
     AppComponent,
 
     SigninComponent,
     SigoutComponent,
-    DashBoxComponent,
-    DashContentComponent,
-    DashItemComponent,
-    DashPageComponent,
+    BoardComponent,
+    ListComponent,
+    DialogComponent,
+    DialogContentComponent
 
 
   ],

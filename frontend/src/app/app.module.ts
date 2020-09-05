@@ -29,20 +29,21 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './pages/login/register/register.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatCardModule } from '@angular/material/card';
+import {MatCardModule} from '@angular/material/card';
+import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
-    SigninComponent,  
+    SigninComponent,
 
     DashContentComponent,
 
@@ -53,6 +54,7 @@ import {MatCardModule } from '@angular/material/card';
     SidebarComponent,
     HomeComponent,
     RegisterComponent,
+    NavbarfakeComponent,
 
 
 
@@ -84,7 +86,8 @@ import {MatCardModule } from '@angular/material/card';
     NgbModule,
     MatSidenavModule,
     MatSelectModule,
-    
+    MatCardModule,
+
   ],
 
   providers: [],

@@ -69,6 +69,7 @@ $Pathwork-theme: mat-light-theme((
 @include angular-material-theme($Pathwork-theme);
 
 
+<<<<<<< HEAD
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -104,6 +105,8 @@ $Pathwork-theme: mat-light-theme((
 @include angular-material-theme($Pathwork-theme);
 
 
+=======
+>>>>>>> 41e1c1c58f5a190c904c5ba53957f1565e266c06
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -147,3 +150,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
+=======
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+>>>>>>> 41e1c1c58f5a190c904c5ba53957f1565e266c06

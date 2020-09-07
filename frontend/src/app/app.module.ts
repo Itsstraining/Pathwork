@@ -28,13 +28,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
-
 @NgModule({
   declarations: [
     AppComponent,
 
     SigninComponent,
     SigoutComponent,
+    DashBoxComponent,
+    DashItemComponent,
+    DashContentComponent,
+    DashPageComponent
 
   ],
   imports: [

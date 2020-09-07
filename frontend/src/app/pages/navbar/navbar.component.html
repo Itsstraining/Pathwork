@@ -8,13 +8,16 @@
             <img [routerLink]="['/sidebar']"  src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE" style="width:40px; height:40px">
           </button>
                     <span [routerLink]="['/sidebar']" style="margin-left:10px" class="logo">Pathwork</span>
-                    <mat-form-field style=" margin-left: 10%">
-                        <mat-label></mat-label>
-                        <textarea style="font-size:small" matInput placeholder="Search"></textarea>
-                        <mat-icon>search</mat-icon>
-
+                    <mat-form-field style=" margin-left : 10% ; margin-top: 1%">
+                        <mat-label style="font-size: small;">Search</mat-label>
+                        <input type="tel" matInput placeholder="">
+                        <mat-icon matSuffix style="margin-top:2%">search</mat-icon>
                     </mat-form-field>
                     <span class="example-spacer"></span>
+
+                    <button mat-icon-button style="border:none">
+                        <mat-icon>add</mat-icon>
+                      </button>
 
                     <button mat-icon-button>
                       <mat-icon>notifications</mat-icon>
@@ -37,3 +40,5 @@
             </div>
 
         </div>
+    </div>
+</div>

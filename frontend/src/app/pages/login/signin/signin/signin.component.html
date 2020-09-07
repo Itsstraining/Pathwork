@@ -4,7 +4,14 @@
             <a>
                 <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
             </a>
+
+
         </div>
+
+        <div class="col-12 " style="margin-top: 3%">
+            <a style="display: flex;justify-content: center; font-size:x-large">Đăng Nhập</a>
+        </div>
+
         <div class="col-sm-12" style="margin-top: 40px">
             <mat-form-field appearance="fill" style="width: 300px;">
                 <mat-label>Nhập tên đăng nhập</mat-label>
@@ -23,29 +30,32 @@
             </button>
             </mat-form-field>
         </div>
-
+        <div class="col-12 ">
+            <mat-checkbox color="primary" style="display: flex; justify-content: center; margin-right:17%">Lưu tài khoản </mat-checkbox>
+        </div>
         <div class="col-sm-12">
             <button id='login' mat-raised-button color="primary" (click)='signin()' style="margin-top: 20px; width:20%">Đăng nhập</button>
         </div>
         <div class="col-sm-12">
-            <h2 style="margin-top: 30px"> Hoặc</h2>
+            <h2 style="margin-top: 1%"> Hoặc</h2>
         </div>
-        <div class="col-sm-12" style="margin-top: 20px">
-            <button mat-raised-button id='google' style="width: 310px;font-size: medium ;outline:none;" *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
+        <div class="col-sm-12" style="margin-bottom:2%">
+            <button mat-raised-button id='google' style="width: 310px;font-size: medium ;outline:none; margin-bottom:1%" *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px"><span style="margin-left:4% ">Đăng nhập với Google</span></button>
 
         </div>
-        <div class="col-sm-12" style="margin-top: 50px">
+        <div class="col-sm-12" style="margin-top: 1.5%">
 
-            <a>Nếu bạn chưa có tài khoản -><button mat-button style="font-size: large;outline:none"  [routerLink]="['/register']"  style= "color:cornflowerblue" >Đăng ký tài khoản mới</button></a>
+            <a>Nếu bạn chưa có tài khoản <button mat-raised-button color="warn"  style="font-size: small;outline:none; width: 15%;"  [routerLink]="['/register']"  >Đăng ký tài khoản mới</button></a>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="margin-top: 2%">
             Bạn sẽ phải đăng ký và chấp thuận
 
 
         </div>
         <div class="col-sm-12">
-            <a routerLink='' target="_blank">các Điều khoản & Điều kiện</a> và
+            <a routerLink='' target="_blank">các Điều khoản & Điều kiện</a> <br> và
+
 
             <a routerLink='' target="_blank"> Chính sách Quyền riêng tư của Pathwork</a>
 

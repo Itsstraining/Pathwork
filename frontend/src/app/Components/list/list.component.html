@@ -5,19 +5,21 @@
   <input name="newItem" ngModel type="text" placeholder="Enter a new item"><button type="submit">Add Item</button>
 </form> -->
 <div class="container">
-  <div class="list" cdkDropList [id]="this.tabUUID"  [cdkDropListData]="items" (cdkDropListDropped)="drop($event)"  (cdkDropListExited)="moveCard($event)">
-      <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
-          <mat-card-content class="card">
-              <p>{{item}}</p>
-              <app-dialog></app-dialog>
-          </mat-card-content>
-      </mat-card>
+  <div class="list" cdkDropList [id]="this.tabUUID" [cdkDropListData]="items" (cdkDropListDropped)="drop($event)"
+    (cdkDropListExited)="moveCard($event)">
+    <mat-card-title><input style="border: none;" class="listname" placeholder="Enter name of list"></mat-card-title>
+    <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
+      <mat-card-content class="card">
+        <p>{{item}}</p>
+        <app-dialog></app-dialog>
+      </mat-card-content>
+    </mat-card>
   </div>
 
   <form #newItemForm="ngForm" (ngSubmit)="onSubmit(newItemForm)">
     <mat-form-field>
-          <input matInput name="newItem" ngModel type="text" placeholder="Enter a new item">
-      </mat-form-field>
-      <button mat-raised-button type="submit" color="accent">Add Task</button>
+      <input style="color: black;font-style: italic;" matInput name="newItem" ngModel type="text" placeholder="Enter a new item">
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="accent">Add Task</button>
   </form>
 </div>

@@ -7,6 +7,7 @@ import { Content } from '@angular/compiler/src/render3/r3_ast';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
+  styles:['.mat-dialog-container{border-radius:70px}'],
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {

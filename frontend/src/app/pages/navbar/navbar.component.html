@@ -24,11 +24,15 @@
                     </button>
 
 
-                    <button style="color: red" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
+                    <button style="color: red" mat-button [matMenuTriggerFor]="menu">
+                      <img style="height: 40px; width: 40px; border-radius: 20px" [src]="photoURL" alt="">
+                    </button>
                     <mat-menu #menu="matMenu">
+                        <p style="font-size:24px">{{name}}</p>
+                        <p style="font-size:10px">{{email}}</p>
                         <button mat-menu-item>Tài Khoản</button>
                         <button mat-menu-item>Cài Đặt</button>
-                        <button [routerLink]="['/signin']" routerLinkActive="router-link-active" mat-menu-item>Đăng Xuất</button>
+                        <button [routerLink]="['']" routerLinkActive="router-link-active" mat-menu-item>Đăng Xuất</button>
 
 
                     </mat-menu>

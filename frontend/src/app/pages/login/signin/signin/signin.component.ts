@@ -79,4 +79,14 @@ export class SigninComponent implements OnInit {
     });
 
   }
+
+  signup(email, password) {
+    this.afAuth.createUserWithEmailAndPassword(this.email.value,this.password.value).then(()=>{
+    this.snackBar.open('Success!', 'ok Nhoc', {duration: 2000});
+    this.router.navigate(['signin']);
+}).catch((err) =>{
+  this.snackBar.open(err,'ok', {duration: 2000});
+});
+  
+  }
 }

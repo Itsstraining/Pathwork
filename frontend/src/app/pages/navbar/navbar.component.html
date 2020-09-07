@@ -1,18 +1,28 @@
-
-  <div style="background-color: whitesmoke">
-    <div class="container">
-  <div class="row">
+<div style="background-color: whitesmoke">
+  <div class="container">
+    <div class="row">
       <div class="col-12">
 
         <mat-toolbar color="whitesmoke">
           <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <img [routerLink]="['/sidebar']"  src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE" style="width:40px; height:40px">
+            <img [routerLink]="['/sidebar']"
+              src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE"
+              style="width:40px; height:40px">
           </button>
-          <span [routerLink]="['/sidebar']"  style="margin-left:10px">Pathwork</span>
+          <span [routerLink]="['/sidebar']" style="margin-left:10px">Pathwork</span>
           <span class="example-spacer"></span>
-          <button style="color: red" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
-          <mat-menu #menu="matMenu">
-            <button [routerLink]="['/signin']" routerLinkActive="router-link-active"  mat-menu-item>Logout</button>
+          <button style="border: none;outline: none;" mat-button [matMenuTriggerFor]="menu">
+            <img style="height: 50px; width: 50px;border-radius: 50%;" [src]="photoULR" alt="">
+          </button>
+          <mat-menu style="border: none" #menu="matMenu">
+            <div style="padding: 10px 20px">
+              <div style="margin-top: 5%;">
+                <p style="font-weight: 20px;">{{name}}</p>
+                <p>{{email}}</p>
+              </div>
+            </div>
+            <button style="outline: none;" [routerLink]="['/signin']" routerLinkActive="router-link-active"
+              mat-menu-item>Log out</button>
           </mat-menu>
 
 
@@ -21,18 +31,4 @@
 
       </div>
 
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>

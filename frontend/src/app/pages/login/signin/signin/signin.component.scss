@@ -1,3 +1,22 @@
+.btn1{
+  font-size: large;outline:none;
+  border-radius: 7px ;
+  color:cornflowerblue;
+  font-size: 15px;
+}
+.btn1:hover{
+  background-color: aqua;
+}
+.vinh{
+  border-color: #8bc34a;
+  border: 1px solid;
+}
+.google{
+  border-radius: 7px;
+}
+.google:hover{
+  background-color: aqua;
+}
 @media only screen and (max-width: 576px){
 
   .example-container .mat-form-field + .mat-form-field {
@@ -58,3 +77,7 @@
  }
 
  }
+.boder-sign{
+  border: 1px solid gray;
+  border-radius: 7px;
+}

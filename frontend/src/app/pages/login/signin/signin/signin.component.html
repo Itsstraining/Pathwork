@@ -1,54 +1,67 @@
+
 <div class="container" style="display: flex; justify-content: center; text-align: center">
-    <div class="row">
-        <div class="col-sm-12">
-            <a>
-                <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
-            </a>
-        </div>
+    <div class="row" style="display: flex;justify-content: center;">
+      <div class="col-sm-12">
+        <a>
+            <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
+        </a>
+      </div>
+      <!-- <div class="vinh"> -->
+       <div style="height: 62%;" class="boder-sign">
         <div class="col-sm-12" style="margin-top: 40px">
-            <mat-form-field appearance="fill" style="width: 300px;">
-                <mat-label>Nhập tên đăng nhập</mat-label>
-                <input matInput placeholder="Nhập tên đăng nhập " required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
+          <mat-form-field appearance="outline" style="width: 300px;">
+              <mat-label>Enter your mail</mat-label>
+              <input matInput placeholder="Enter your mail" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
 
-        </div>
-        <div class="col-sm-12 ">
+      </div>
+      <div class="col-sm-12 ">
 
-            <mat-form-field appearance="fill" style="width: 301px;">
-                <mat-label>Nhập mật khẩu</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-form-field appearance="outline" style="width: 301px;">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             </mat-form-field>
         </div>
 
         <div class="col-sm-12">
-            <button id='login' mat-raised-button color="primary" (click)='signin()' style="margin-top: 20px; width:20%">Đăng nhập</button>
+          <button class='login' mat-raised-button color="primary" (click)='signin()' style="margin-bottom: 20px">Sign in</button>
         </div>
-        <div class="col-sm-12">
-            <h2 style="margin-top: 30px"> Hoặc</h2>
-        </div>
-        <div class="col-sm-12" style="margin-top: 20px">
-            <button mat-raised-button id='google' style="width: 310px;font-size: medium ;outline:none;" *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px"><span style="margin-left:4% ">Đăng nhập với Google</span></button>
+       
+     
+        
+        <div class="col-sm-12" style="margin-top: 20px;">
+          <button mat-raised-button class='google' style="width: 310px;font-size:large;outline:none;"
+          *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px">Sign in with Google</button>
 
         </div>
+      </div> 
         <div class="col-sm-12" style="margin-top: 50px">
 
-            <a>Nếu bạn chưa có tài khoản -><button mat-button style="font-size: large;outline:none"  [routerLink]="['/register']"  style= "color:cornflowerblue" >Đăng ký tài khoản mới</button></a>
+          <a >Can't log in ?  -><button class ="btn1" [routerLink]="['/register']"   >Sign up for an account</button></a>
         </div>
         <div class="col-sm-12">
-            Bạn sẽ phải đăng ký và chấp thuận
+          By signing up, you confirm that you've read and accepted 
 
 
         </div>
         <div class="col-sm-12">
-            <a routerLink='' target="_blank">các Điều khoản & Điều kiện</a> và
+            <a routerLink='' target="_blank">Our Terms of Service</a> and
 
-            <a routerLink='' target="_blank"> Chính sách Quyền riêng tư của Pathwork</a>
-
+            <a routerLink='' target="_blank"> Privacy Policy of Pathwork</a>
+          
         </div>
     </div>
-</div>
+  </div>
+<!-- </div> -->
+
+
+
+
+
+

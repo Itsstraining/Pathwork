@@ -13,8 +13,8 @@ interface Food {
 })
 export class NavbarComponent implements OnInit {
   public name='';
-  public photoURL = '';
-  public email='';
+  public email= '';
+  public photoULR= '';
   foods: Food[] = [
     {value: 'Logout', viewValue: 'Logout'},
 
@@ -24,13 +24,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.afAuth.user.subscribe((user)=>{
       if(user){
-        this.photoURL = user.photoURL;
-        this.name = user.displayName;
-        this.email= user.email;
-
-
-
-
+        this.name=user.displayName;
+        this.email=user.email;
+        this.photoULR=user.photoURL;
 
 
       }

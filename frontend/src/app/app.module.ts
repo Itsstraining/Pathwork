@@ -40,6 +40,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
     HomeComponent,
     RegisterComponent,
     NavbarfakeComponent,
+
 
 
 
@@ -77,7 +79,7 @@ import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-
+    MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,

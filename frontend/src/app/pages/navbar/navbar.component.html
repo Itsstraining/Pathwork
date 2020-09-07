@@ -1,44 +1,43 @@
-
-  <div style="background-color: whitesmoke">
+<div style="background-color: whitesmoke">
     <div class="container">
-  <div class="row">
-      <div class="col-12">
+        <div class="row">
+            <div class="col-12">
 
-        <mat-toolbar color="whitesmoke">
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-toolbar color="whitesmoke">
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <img [routerLink]="['/sidebar']"  src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE" style="width:40px; height:40px">
           </button>
-          <span [routerLink]="['/sidebar']"  style="margin-left:10px">Pathwork</span>
-          <span class="example-spacer"></span>
-          <button style="color: red; margin-right: 40px; margin-bottom: 16px" mat-button [matMenuTriggerFor]="menu">
-           <img [src]="this.photoURL" alt="" style="width: 40px ;height: 40px;margin-right: 40px; margin-bottom:-2pxpx "></button>
+                    <span [routerLink]="['/sidebar']" style="margin-left:10px" class="logo">Pathwork</span>
+                    <mat-form-field style=" margin-left: 10%">
+                        <mat-label></mat-label>
+                        <textarea style="font-size:small" matInput placeholder="Search"></textarea>
+                        <mat-icon>search</mat-icon>
 
-          <mat-menu #menu="matMenu" >
-            <p style="font-size: 16px; margin-bottom: 4px">{{this.name}}</p>
-            <p style="font-size: 10px">{{this.email}}</p>
+                    </mat-form-field>
+                    <span class="example-spacer"></span>
 
-            <button [routerLink]="['/signin']" routerLinkActive="router-link-active"  mat-menu-item>Logout</button>
-
-          </mat-menu>
-
-
-        </mat-toolbar>
+                    <button mat-icon-button>
+                      <mat-icon>notifications</mat-icon>
+                    </button>
 
 
-      </div>
-
-  </div>
-
-
-
-
-
-
-
-
+                    <button style="color: red" mat-button [matMenuTriggerFor]="menu">
+                      <img style="height: 40px; width: 40px; border-radius: 20px" [src]="photoURL" alt="">
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <p style="font-size:24px">{{name}}</p>
+                        <p style="font-size:10px">{{email}}</p>
+                        <button mat-menu-item>Tài Khoản</button>
+                        <button mat-menu-item>Cài Đặt</button>
+                        <button [routerLink]="['']" routerLinkActive="router-link-active" mat-menu-item>Đăng Xuất</button>
 
 
+                    </mat-menu>
 
 
+                </mat-toolbar>
 
 
+            </div>
+
+        </div>

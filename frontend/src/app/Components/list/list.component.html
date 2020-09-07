@@ -10,8 +10,9 @@
     <mat-card-title><input style="border: none;" class="listname" placeholder="Enter name of list"></mat-card-title>
     <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
       <mat-card-content class="card">
-        <p>{{item}}</p>
-        <app-dialog></app-dialog>
+
+        <p>{{item}}<app-dialog></app-dialog></p>
+
       </mat-card-content>
     </mat-card>
   </div>

@@ -2,8 +2,11 @@
 <div class="list-container" cdkDropListGroup>
     <app-list *ngFor="let list of lists"></app-list>
 </div> -->
+<app-navbarfake></app-navbarfake>
+
 <button (click)="addList()" mat-raised-button color="primary">Add List</button>
 <div class="list-container" cdkDropListGroup>
     <app-list [tabUUID]="tab" *ngFor="let tab of lists"></app-list>
 
 </div>
+

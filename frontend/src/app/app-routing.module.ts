@@ -16,7 +16,7 @@ const routes: Routes = [
     component: SigninComponent,
   },
   {
-    path:"board",
+    path:'board',
     component: BoardComponent,
   },
   {

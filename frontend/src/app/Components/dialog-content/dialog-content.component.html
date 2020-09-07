@@ -1,11 +1,12 @@
-<h2 mat-dialog-title class="comment"><mat-label>Comment*</mat-label></h2>
-<input matInput #message maxlength="256" placeholder="Comment here" style="background-color:azure;">
-<mat-dialog-content class="mat-typography">
+<h2 mat-dialog-title class="comment"><mat-label>Comment*</mat-label>
+<input matInput #message maxlength="256" placeholder="Comment here" style="border: none;">
+<mat-dialog-content class="mat-typography" style="border-radius:70px">
 </mat-dialog-content>
 
-<h1></h1>
+
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>delete</button>
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Done</button>
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Edit</button>
 </mat-dialog-actions>
+</h2>

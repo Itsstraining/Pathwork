@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 var admin = require("firebase-admin");
 const cors = require("cors");
 var serviceAccount = require("../key.json");
+// const userRouter = require("./userrouter/iduser.router")
+// const userRouter = require("./userrouter/nameuser.router")
+// const userRouter = require("./userrouter/passworduser.router")
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -13,6 +16,8 @@ app.get("/ping", (req, res) => {
   res.send("hello");
 });
 app.use(bodyParser());
+app.use('/v1/user',require('./userrouter/user.router'));
+
 app.listen(7762, "127.0.0.1", () => {
   console.log("server is running");
 });
@@ -28,6 +33,7 @@ app.post("/v1/board", async (req, res) => {
     }
   } catch (e) {
     res.send("Failed to create " + list.task);
+
   }
 });
 app.get("/v1/board", async (req, res) => {
@@ -63,6 +69,7 @@ app.get("/v1/board", async (req, res) => {
     data: data,
   });
 });
+
 
 app.put("/v1/board/:task", async (req, res) => {
   const { task } = req.params;
@@ -110,56 +117,3 @@ app.delete("/v1/board/:task", async (req, res) => {
   }
 });
 
-app.get("/v1/users", async (req, res) => {
-  const user = req.body;
-  console.log(user);
-  try {
-      await admin.firestore().collection("store-user").add(user);
-      res.send("get user");
-  } catch (e) {
-      res.send('cant get user');
-  }
-})
-
-app.post("/v1/users", async (req, res) => {
-  const item = req.body;
-  console.log(user);
-  try {
-      await admin.firestore().collection("store-user").add(user);
-      res.send("creat user");
-  } catch (e) {
-      res.send('return user');
-  }
-})
-
-app.put("/v1/users", async (req, res) => {
-  const { user } = req.params;
-  if (user == undefined) {
-      res.send({
-          message: "please set the user "
-      })
-      return;
-  }
-  let doc = admin.firestore().collection("store-user").doc.apply(user);
-  if ((await doc.get()).exists) {
-      if (id == req.body.user) {
-          try {
-              await doc.set(req.body);
-              res.send({
-                  message: "update successfully"
-              });
-              return;
-          }
-          catch{
-              res.send({
-                  message: "Fail"
-              });
-              return;
-          }
-          res.send({
-              message: "User is not match"
-          });
-          return;
-      }
-  }
-});

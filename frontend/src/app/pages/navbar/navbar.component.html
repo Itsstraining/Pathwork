@@ -1,38 +1,39 @@
-
-  <div style="background-color: whitesmoke">
+<div style="background-color: whitesmoke">
     <div class="container">
-  <div class="row">
-      <div class="col-12">
+        <div class="row">
+            <div class="col-12">
 
-        <mat-toolbar color="whitesmoke">
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-toolbar color="whitesmoke">
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <img [routerLink]="['/sidebar']"  src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png?fbclid=IwAR3s5qEDMojfkIF6zeKZ7JJBKvhNWi1NAeNL7v7wtqx5ceQ6pdOjngdgRIE" style="width:40px; height:40px">
           </button>
-          <span [routerLink]="['/sidebar']"  style="margin-left:10px">Pathwork</span>
-          <span class="example-spacer"></span>
-          <button style="color: red" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
-          <mat-menu #menu="matMenu">
-            <button [routerLink]="['/signin']" routerLinkActive="router-link-active"  mat-menu-item>Logout</button>
-          </mat-menu>
+                    <span [routerLink]="['/sidebar']" style="margin-left:10px" class="logo">Pathwork</span>
+                    <mat-form-field style=" margin-left: 10%">
+                        <mat-label></mat-label>
+                        <textarea style="font-size:small" matInput placeholder="Search"></textarea>
+                        <mat-icon>search</mat-icon>
+
+                    </mat-form-field>
+                    <span class="example-spacer"></span>
+
+                    <button mat-icon-button>
+                      <mat-icon>notifications</mat-icon>
+                    </button>
 
 
-        </mat-toolbar>
+                    <button style="color: red" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Tài Khoản</button>
+                        <button mat-menu-item>Cài Đặt</button>
+                        <button [routerLink]="['/signin']" routerLinkActive="router-link-active" mat-menu-item>Đăng Xuất</button>
 
 
-      </div>
-
-  </div>
+                    </mat-menu>
 
 
+                </mat-toolbar>
 
 
+            </div>
 
-
-
-
-
-
-
-
-
-
+        </div>

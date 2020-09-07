@@ -77,7 +77,7 @@ import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-
+    MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,

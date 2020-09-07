@@ -60,3 +60,44 @@
 
 
 
+ <!-- <div class="container" style="display: flex; justify-content: center">
+   <div class="row">
+     <div class="col-sm-6">
+
+     </div>
+     <div class="col-sm-6 col-12" >
+        <a style="margin-left:90px">
+          <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
+        </a>
+        <br>
+        <mat-form-field appearance="fill" style="width: 300px;">
+        <mat-label>Enter your name</mat-label>
+        <input matInput placeholder="Enter your name" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" style="width: 301px;">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+        <button id='login' mat-raised-button color="primary" (click)='signin()' style="margin-top: 20px;margin-left:96px">Đăng nhập</button>
+        <br>
+        <h2 style="margin-top: 30px; margin-left:122px"> Hoặc</h2>
+        <br>
+        <button mat-raised-button id='google' style="width: 310px;font-size:large;outline:none;"
+          *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" style="width:20px;height:20px;margin-right:6px">Đăng nhập với Google</button>
+        <br>
+        <a style="margin-top: 10px"  [routerLink]="['/register']">Nếu bạn chưa có tài khoản ==> Đăng kí</a>
+
+
+
+
+     </div>
+   </div>
+ </div> -->

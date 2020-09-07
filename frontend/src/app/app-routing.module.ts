@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/login/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 
+
 const routes: Routes = [
   {
     path : 'signin',
@@ -33,6 +34,7 @@ const routes: Routes = [
     path:'navbarfake',
     component: NavbarfakeComponent,
   },
+
 
 
 

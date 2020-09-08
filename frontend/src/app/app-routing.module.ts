@@ -28,7 +28,7 @@ const routes: Routes = [
     component:RegisterComponent,
   },
   {
-    path:'',
+    path:'homeads',
     component: HomeComponent,
   },
 ];

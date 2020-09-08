@@ -7,7 +7,7 @@ import { BoardComponent } from './Components/board/board.component';
 import { RegisterComponent } from './pages/login/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-
+import {AuthGuard} from './Guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,10 +17,11 @@ const routes: Routes = [
   {
     path:'board',
     component: BoardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',
-    component: SidebarComponent
+    component: SidebarComponent,
   },
   {
     path: 'register',

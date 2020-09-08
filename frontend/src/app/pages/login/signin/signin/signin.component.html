@@ -37,14 +37,14 @@
             <button id='login' mat-raised-button color="primary" (click)='signin()' style="margin-top: 20px; width:20%">Đăng nhập</button>
         </div>
         <div class="col-sm-12">
-            <h2 style="margin-top: 1%"> Hoặc</h2>
+
         </div>
-        <div class="col-sm-12" style="margin-bottom:2%">
+        <div class="col-sm-12" style="margin-top: 2%">
             <button mat-raised-button id='google' style="width: 310px;font-size: medium ;outline:none; margin-bottom:1%" *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px"><span style="margin-left:4% ">Đăng nhập với Google</span></button>
 
         </div>
-        <div class="col-sm-12" style="margin-top: 1.5%">
+        <div class="col-sm-12" style="margin-top: 3%">
 
             <a>Nếu bạn chưa có tài khoản <button mat-raised-button color="warn"  style="font-size: small;outline:none; width: 15%;"  [routerLink]="['/register']"  >Đăng ký tài khoản mới</button></a>
         </div>

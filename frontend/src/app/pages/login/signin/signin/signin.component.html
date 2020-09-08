@@ -1,13 +1,17 @@
-
 <div class="container" style="display: flex; justify-content: center; text-align: center">
-    <div class="row" style="display: flex;justify-content: center;">
-      <div class="col-sm-12">
-        <a>
-            <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
-        </a>
-      </div>
-      <!-- <div class="vinh"> -->
-       <div style="height: 62%;" class="boder-sign">
+    <div class="row">
+        <div class="col-sm-12">
+            <a>
+                <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px; margin-top: 2%">
+            </a>
+
+
+        </div>
+
+        <div class="col-12 " style="margin-top: 3%">
+            <a style="display: flex;justify-content: center; font-size:x-large">Đăng Nhập</a>
+        </div>
+
         <div class="col-sm-12" style="margin-top: 40px">
           <mat-form-field appearance="outline" style="width: 300px;">
               <mat-label>Enter your mail</mat-label>
@@ -15,8 +19,8 @@
               <mat-error *ngIf="emailControl.invalid">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
 
-      </div>
-      <div class="col-sm-12 ">
+        </div>
+        <div class="col-sm-12 ">
 
           <mat-form-field appearance="outline" style="width: 301px;">
             <mat-label>Enter your password</mat-label>
@@ -27,41 +31,39 @@
             </button>
             </mat-form-field>
         </div>
-
-        <div class="col-sm-12">
-          <button class='login' mat-raised-button color="primary" (click)='signin()' style="margin-bottom: 20px">Sign in</button>
+        <div class="col-12 ">
+            <mat-checkbox color="primary" style="display: flex; justify-content: center; margin-right:17%">Lưu tài khoản </mat-checkbox>
         </div>
-       
-     
-        
-        <div class="col-sm-12" style="margin-top: 20px;">
-          <button mat-raised-button class='google' style="width: 310px;font-size:large;outline:none;"
-          *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px">Sign in with Google</button>
 
-        </div>
-      </div> 
-        <div class="col-sm-12" style="margin-top: 50px">
-
-          <a >Can't log in ?  -><button class ="btn1" [routerLink]="['/register']"   >Sign up for an account</button></a>
+        <div class="col-12 ">
+            <a [routerLink]="[ ]" target="blank">Quên mật khẩu? </a>
         </div>
         <div class="col-sm-12">
-          By signing up, you confirm that you've read and accepted 
+            <button id='login' mat-raised-button color="primary" (click)='signin()' style="margin-top: 20px; width:20%">Đăng nhập</button>
+        </div>
+        <div class="col-sm-12">
+
+        </div>
+        <div class="col-sm-12" style="margin-top: 2%">
+            <button mat-raised-button id='google' style="width: 310px;font-size: medium ;outline:none; margin-bottom:1%" *ngIf="authService.user$ == null" (click)='googleSignin()'><img id='logogg'
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="20px" height="20px"><span style="margin-left:4% ">Đăng nhập với Google</span></button>
+
+        </div>
+        <div class="col-sm-12" style="margin-top: 3%">
+
+            <a>Nếu bạn chưa có tài khoản <button mat-raised-button color="warn"  style="font-size: small;outline:none; width: 15%;"  [routerLink]="['/register']"  >Đăng ký tài khoản mới</button></a>
+        </div>
+        <div class="col-sm-12" style="margin-top: 2%">
+            Bạn sẽ phải đăng ký và chấp thuận
 
 
         </div>
         <div class="col-sm-12">
-            <a routerLink='' target="_blank">Our Terms of Service</a> and
+            <a routerLink='' target="_blank">các Điều khoản & Điều kiện</a> <br> và
 
-            <a routerLink='' target="_blank"> Privacy Policy of Pathwork</a>
-          
+
+            <a routerLink='' target="_blank"> Chính sách Quyền riêng tư của Pathwork</a>
+
         </div>
     </div>
-  </div>
-<!-- </div> -->
-
-
-
-
-
-
+</div>

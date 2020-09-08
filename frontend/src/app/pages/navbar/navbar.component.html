@@ -12,7 +12,8 @@
           <span [routerLink]="['/sidebar']" style="margin-left:10px">Pathwork</span>
           <span class="example-spacer"></span>
           <button style="border: none;outline: none;" mat-button [matMenuTriggerFor]="menu">
-            <img style="height: 50px; width: 50px;border-radius: 50%;" [src]="photoULR ? photoULR : '../assets/images/user.svg'" alt="">
+            <img style="height: 50px; width: 50px;border-radius: 50%;"
+              [src]="photoULR ? photoULR : '../assets/images/user.svg'" alt="">
           </button>
           <mat-menu style="border: none" #menu="matMenu">
             <div style="padding: 10px 20px">

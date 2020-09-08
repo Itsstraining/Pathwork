@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragExit } from '@angular/cdk/drag-drop';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 const fieldValue = firebase.firestore.FieldValue
@@ -21,11 +21,16 @@ export class ListComponent implements OnInit {
     this.afs.collection("cards").doc(this.tabUUID) .snapshotChanges().subscribe((card)=>{
       this.items = card.payload.get("messages") // Correct array Index
       // console.log(this.items)
+      this.tiltleControl.setValue(card.payload.get("title"));
     })
   }
 
-
-
+  tiltleControl = new FormControl("");
+  saveTiltle()
+  {
+      console.log(this.tiltleControl.value);
+      this.afs.collection("cards").doc(this.tabUUID).update({"title": this.tiltleControl.value});
+  }
   moveCard(event:CdkDragExit<string[]>){
     // event.item.exited.subscribe((data)=>{
     //   console.log(data)

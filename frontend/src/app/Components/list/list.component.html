@@ -7,7 +7,19 @@
 <div class="container">
   <div class="list" cdkDropList [id]="this.tabUUID" [cdkDropListData]="items" (cdkDropListDropped)="drop($event)"
     (cdkDropListExited)="moveCard($event)">
-    <mat-card-title><input style="border: none;color: white; font-weight: initial;" class="listname" placeholder="Enter name of list"></mat-card-title>
+    <mat-card-title style="display: flex;"><input style="border: none;" class="listname" [formControl] = "this.tiltleControl"  placeholder="Enter name of list"><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="this.saveTiltle()" mat-menu-item>
+        
+        <span>Save Tiltle</span>
+      </button>
+      <button mat-menu-item>
+        
+        <span>Delete</span>
+      </button>
+    </mat-menu></mat-card-title>
     <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
       <mat-card-content class="card">
 

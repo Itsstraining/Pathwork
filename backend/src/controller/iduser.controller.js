@@ -68,12 +68,12 @@ module.exports.getUserbyid =  (req, res) => {
 };
 
 module.exports.updateUserid = (req,res) =>{
+  console.log("----running put user")
   let uid = req.body.uid;
   db.collection('users').doc(uid).set({
     name:req.body.name,
     email:req.body.email,
-    photourl:req.body.photourl,
-    birthday:req.body.birthday,
+    photourl:req.body.photourl
   }).then(()=>{
     res.status(200).send("ok")
   })

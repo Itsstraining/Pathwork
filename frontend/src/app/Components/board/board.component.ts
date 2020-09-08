@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListComponent } from '../list/list.component';
 
 import * as firebase from 'firebase';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 const fieldValue = firebase.firestore.FieldValue
 @Component({
   selector: 'app-board',
@@ -21,7 +22,9 @@ export class BoardComponent implements OnInit {
       this.lists = card.payload.get("tabs")
     })
   }
-
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.lists, event.previousIndex, event.currentIndex);
+  }
   async addList() {
     let cardRef = await this.afs.collection("cards").add({
     })

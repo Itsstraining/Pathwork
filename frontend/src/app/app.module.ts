@@ -40,6 +40,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 import {AuthGuard} from "./Guards/auth.guard";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,7 @@ import {AuthGuard} from "./Guards/auth.guard";
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-
+    HttpClientModule
   ],
 
   providers: [AuthGuard],

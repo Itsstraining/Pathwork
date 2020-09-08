@@ -7,7 +7,7 @@
 <div class="container">
   <div class="list" cdkDropList [id]="this.tabUUID" [cdkDropListData]="items" (cdkDropListDropped)="drop($event)"
     (cdkDropListExited)="moveCard($event)">
-    <mat-card-title><input style="border: none;" class="listname" placeholder="Enter name of list"></mat-card-title>
+    <mat-card-title><input style="border: none;color: white; font-weight: initial;" class="listname" placeholder="Enter name of list"></mat-card-title>
     <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
       <mat-card-content class="card">
 

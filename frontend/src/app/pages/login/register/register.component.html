@@ -1,63 +1,65 @@
 <div class="container" style="display: flex; justify-content: center; text-align: center">
-  <div class="row">
-    <div class="col-sm-12">
-      <a>
-        <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo"
-          style="width: 100px; height: 100px">
-      </a>
+    <div class="row">
+        <div class="col-sm-12">
+            <a>
+                <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/list-484-1126444.png" alt="logo" style="width: 100px; height: 100px">
+            </a>
+        </div>
+
+        <div class="col-12 " style="margin-top: 3%">
+            <a style="display: flex;justify-content: center; font-size:x-large">Đăng Ký</a>
+        </div>
+
+        <div class="col-sm-12" style="margin-top: 40px">
+            <mat-form-field appearance="fill" style="width: 300px;">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="Enter your name" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+        </div>
+        <div class="col-sm-12 ">
+
+            <mat-form-field appearance="fill" style="width: 301px;">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-12">
+            <mat-form-field appearance="fill" style="width: 301px;">
+                <mat-label>Enter retype your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+            </mat-form-field>
+        </div>
+
+        <div class="col-sm-12">
+            <button id='login' mat-raised-button color="primary" style="margin-top: 20px ; width: 20%">Đăng ký</button>
+        </div>
+
+
+
+
+        <div class="col-sm-12" style="margin-top: 40px">
+            Khi đăng ký tài khoản Pathwork bạn sẽ phải chấp thuận
+            <br>
+            <a [routerLink]="['/signin']" target="_blank">các Điều khoản & Điều kiện</a> và
+
+            <div class="col-sm-12">
+
+            </div>
+
+        </div>
+        <div class="col-sm-12">
+            <a [routerLink]="['/signin']" target="_blank"> Chính sách Quyền riêng tư của Pathwork</a>
+            <br>
+            <span> Nếu bạn đã có tài khoản Pathwork - > </span>
+            <button mat-raised-button color="primary"><a [routerLink]="['/signin']"  style="color: white;">Đăng nhập</a></button>
+        </div>
     </div>
-    <div class="col-sm-12" style="margin-top: 40px">
-      <mat-form-field appearance="outline" style="width: 300px;">
-        <mat-label>Enter your mail</mat-label>
-        <input matInput placeholder="Enter your mail" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-
-    </div>
-    <div class="col-sm-12 ">
-
-      <mat-form-field appearance="outline" style="width: 301px;">
-        <mat-label>Enter your password</mat-label>
-        <input matInput placeholder="Enter your password">
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-    <div class="col-sm-12">
-      <mat-form-field appearance="outline" style="width: 301px;">
-        <mat-label>
-          Confirm password</mat-label>
-          <input matInput placeholder=" Confirm password">
-        <input matInput [type]="hide ? 'password' : 'text'">
-
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-
-    <div class="col-sm-12">
-      <button id='login' mat-raised-button color="primary" style="margin-top: 20px">Sign in</button>
-    </div>
-
-
-
-
-    <div class="col-sm-12" style="margin-top: 40px">
-      By signing up, you confirm that you've read and accepted 
-
-      <a [routerLink]="['/signin']" target="_blank">Our Terms of Service</a> and
-
-
-    </div>
-    <div class="col-sm-12">
-      <a [routerLink]="['/signin']" target="_blank"> Privacy Policy of Pathwork</a>
-      <button style="border-radius: 30;color:forestgreen"><a [routerLink]="['/signin']">==>Sign
-          up</a></button>
-    </div>
-  </div>
 </div>

@@ -4,12 +4,10 @@ import { SigninComponent } from './pages/login/signin/signin/signin.component';
 
 import { BoardComponent } from './Components/board/board.component';
 
-import { NavbarComponent } from './pages/navbar/navbar.component';
-import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/login/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
-
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import {AuthGuard} from './Guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,31 +17,20 @@ const routes: Routes = [
   {
     path:'board',
     component: BoardComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path:'navbar',
-    component:NavbarComponent
-  },
-  {
-    path: 'sidebar',
-    component:SidebarComponent,
+    path: 'home',
+    component: SidebarComponent,
   },
   {
     path: 'register',
     component:RegisterComponent,
   },
   {
-    path:'',
+    path:'homeads',
     component: HomeComponent,
   },
-  {
-    path:'navbarfake',
-    component: NavbarfakeComponent,
-  },
-
-
-
-
 ];
 
 @NgModule({

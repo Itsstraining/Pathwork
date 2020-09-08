@@ -1,55 +1,83 @@
-@media only screen and (max-width: 576px) {
-    .example-container .mat-form-field+.mat-form-field {
-        margin-left: 8px;
-    }
-    .example-right-align {
-        text-align: right;
-    }
-    input.example-right-align {
-        -moz-appearance: textfield;
-    }
-    form {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    #google {
-        background-color: #f3f2f2;
-        width: 308px;
-        height: 50px;
-    }
-    .nen {
-        position: relative;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    #logogg {
-        width: 20px;
-        height: 35px;
-    }
-    #login {
-        background-color: #8bc34a;
-    }
-    footer {
-        width: 100%;
-    }
-    #dangki {
-        margin-top: 25px;
-        font-size: large
-    }
-    #main {
-        margin-top: 20px;
-        margin-left: 100px;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
+.btn1{
+  font-size: large;outline:none;
+  border-radius: 7px ;
+  color:cornflowerblue;
+  font-size: 15px;
 }
+.btn1:hover{
+  background-color: aqua;
+}
+.vinh{
+  border-color: #8bc34a;
+  border: 1px solid;
+}
+.google{
+  border-radius: 7px;
+}
+.google:hover{
+  background-color: aqua;
+}
+@media only screen and (max-width: 576px){
 
-.logo {
-    margin-top: 5%
+  .example-container .mat-form-field + .mat-form-field {
+   margin-left: 8px;
+ }
+
+ .example-right-align {
+   text-align: right;
+ }
+
+
+ input.example-right-align {
+   -moz-appearance: textfield;
+ }
+ form{
+   position: absolute;
+
+   width: 500px;
+   height: 500px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+ }
+ #google{
+   background-color:#f3f2f2;
+   width:308px;
+   height: 50px;
+ }
+ .nen{
+   position: relative;
+
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ }
+ #logogg{
+   width: 35px;
+   height: 35px;
+ }
+ #login{
+   background-color: #8bc34a;
+ }
+ footer{
+
+   width: 100%;
+ }
+ #dangki{
+   margin-top: 25px;
+   font-size: large
+ }
+ #main{
+ margin-top: 20px;
+ margin-left: 100px;
+ }
+ .container{
+ display: flex;
+ justify-content: center;
+ text-align: center;
+ }
+
+ }
+.boder-sign{
+  border: 1px solid gray;
+  border-radius: 7px;
 }

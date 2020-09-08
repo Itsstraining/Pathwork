@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UiModule } from './modules/ui/ui.module';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule} from '@angular/cdk/drag-drop';
 import { SigninComponent } from './pages/login/signin/signin/signin.component';
 
 
@@ -39,7 +39,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
-
+import {AuthGuard} from "./Guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -91,7 +91,7 @@ import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 
   ],
 
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

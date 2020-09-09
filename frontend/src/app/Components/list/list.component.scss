@@ -12,10 +12,11 @@
   border: solid 1px #ccc;
   min-height: 60px;
   display: block;
-  background:#2962ff;
+  background: thistle;
   border-radius: 5px;
   overflow: hidden;
-
+  opacity: 0.4;
+  filter: alpha(opacity=30);
   box-shadow:2px 2px gray;
 }
 
@@ -55,6 +56,12 @@
 }
 
 .listname{
-  background-color:#2962ff;
+  background-color:thistle;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  color: black;
+  font-weight: 900;
+  font-style: italic;
+  font-family:brush-script;
 }
 

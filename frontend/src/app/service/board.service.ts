@@ -3,6 +3,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 const fieldValue = firebase.firestore.FieldValue
 
 @Injectable({
@@ -10,8 +12,7 @@ const fieldValue = firebase.firestore.FieldValue
 })
 export class BoardService {
 
-  constructor(private _snackBar: MatSnackBar,public afs: AngularFirestore, private afAuth: AngularFireAuth,) { }
-
+  constructor(private _snackBar: MatSnackBar,public afs: AngularFirestore, private afAuth: AngularFireAuth,private http:HttpClient) { }
 
   async addBoard(title: string) {
     return await this.afs.collection("board").add({
@@ -20,10 +21,18 @@ export class BoardService {
     })
   }
 
-  async addSharedUser(stringEmail: string) {
-    //parse string to array
-    let arrayEmail = stringEmail.split(",");
-    console.log(arrayEmail);
+  async addSharedUser(bid: string, stringEmail: Array<string>) {
+    //call api with body -> bid and arrayEmail
+     return await this.http.put(environment.endpoint+"/v1/board/shared", {
+      "bid": bid,
+      "arrayEmail": stringEmail
+    }).toPromise().then(value =>{
+      //console.log(value);
+      this.openSnackBar("OK", "")
+    }).catch(err => {
+      //console.log(err);
+      this.openSnackBar("Oh No! Some thing wrong !!!", "")
+    })
   }
 
   async addBoardOwner(Bid: string, uid: string) {

@@ -31,6 +31,12 @@ li{
   font-weight: bold;
 }
 
+.container-fluid{
+  height: 90vh;
+}
+.row{
+  height: 100%;
+}
 .board-img{
   border-radius: 3px;
   display: block;
@@ -54,7 +60,12 @@ li{
   opacity: 0.6;
 }
 
-
+.sidebar{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
 
 .ulbtn{
   list-style: none;
@@ -73,6 +84,7 @@ li{
 .libtn{
   margin-bottom: 4px;
   display: list-item;
+  width: 70%;
 }
 
 .btnstyle{
@@ -102,7 +114,7 @@ li{
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .inli{

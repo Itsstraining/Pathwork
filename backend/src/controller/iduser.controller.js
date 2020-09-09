@@ -91,14 +91,3 @@ module.exports.updateUserid = (req, res) => {
 };
 
 
-module.exports.shareBoardUserEmail = (req, res) => {
-  console.log("----running share board")
-  let arrayEmail = req.body.arrayEmail;
-  //parse array email to array object email
-  arrayEmail = arrayEmail.map(element => {
-    return {"email": element};
-  });
-  console.log(arrayEmail);
-  auth.getUsers(arrayEmail).then()
-
-}

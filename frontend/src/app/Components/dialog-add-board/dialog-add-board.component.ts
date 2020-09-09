@@ -23,13 +23,14 @@ export class DialogAddBoardComponent implements OnInit {
   //button click
   // khoi tao board moi trong database
   // luu ten nguoi dung so huu
-  // luu ten nguoi dung share
+  // luu ten nguoi dung share (dùng thêm api /v1/board/shared)
   addClick(){
     this.boardService.addBoard(this.titleControl.value).then(docref =>{
       
       let boardId = docref.id;
       this.boardService.addBoardOwner(boardId, this.auth.authState.uid);
-      this.boardService.addSharedUser(this.emailSharedControl.value);
+      this.boardService.addSharedUser(boardId, this.arraySharedEmail);
+      
     })
   }
 

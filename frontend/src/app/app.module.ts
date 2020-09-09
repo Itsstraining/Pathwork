@@ -41,7 +41,8 @@ import {MatCardModule} from '@angular/material/card';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 import {AuthGuard} from "./Guards/auth.guard";
 import { HttpClientModule } from '@angular/common/http';
-
+import { DialogAddBoardComponent } from './Components/dialog-add-board/dialog-add-board.component';
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     RegisterComponent,
     NavbarfakeComponent,
+    DialogAddBoardComponent,
 
 
 
@@ -89,7 +91,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatChipsModule
   ],
 
   providers: [AuthGuard],

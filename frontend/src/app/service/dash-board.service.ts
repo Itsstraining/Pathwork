@@ -11,5 +11,11 @@ async updateTabCard(tabUUID, items) {
     "messages": items
   })
 }
+
+async updateAllList(listId, items){
+  return await this.afs.collection("board").doc(listId).update({
+    "tabs": items,
+  })
+}
   constructor(public afs: AngularFirestore) { }
 }

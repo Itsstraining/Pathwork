@@ -11,7 +11,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
   providedIn: 'root'
 })
 export class AuthService {
-  authState:any = null;
+  authState:firebase.User = null;
   public user:firebase.User= null;
   user$: Observable<User>;
   constructor(

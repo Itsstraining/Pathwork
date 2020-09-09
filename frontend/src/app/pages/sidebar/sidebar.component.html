@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar ></app-navbar>
 <div class="container">
     <div class="row">
 
@@ -19,7 +19,7 @@
                     <button style="padding: 8px;" class="board-img" (click)="gotoSth('board')"><a class="wordintable">Shopping</a></button>
                 </li>
                 <li class="inli">
-                    <button style="padding: 8px;" class="newboard"><a class="newboardword">Tạo bảng</a></button>
+                    <button style="padding: 8px;" (click)="openDialogAddBoard()" class="newboard"><a class="newboardword">Tạo bảng</a></button>
                 </li>
             </ul>
 

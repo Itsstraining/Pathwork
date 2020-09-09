@@ -59,6 +59,16 @@ li{
 .board-img:hover{
   opacity: 0.6;
 }
+.col-sidebar{
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .col-sidebar {
+    height: auto;
+  }
+}
+
 
 .sidebar{
   display: flex;
@@ -115,8 +125,17 @@ li{
   flex-wrap: wrap;
   align-content: center;
   justify-content: flex-start;
+  list-style-type: none;
 }
 
+@media only screen and (max-width: 600px) {
+  .ultable{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+}
 .inli{
   padding: 5px;
 }

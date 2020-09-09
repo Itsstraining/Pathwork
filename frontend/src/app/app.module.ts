@@ -43,6 +43,8 @@ import {AuthGuard} from "./Guards/auth.guard";
 import { HttpClientModule } from '@angular/common/http';
 import { DialogAddBoardComponent } from './Components/dialog-add-board/dialog-add-board.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { AuthService } from './service/auth.service';
+import { BoardCardHomeComponent } from './Components/board-card-home/board-card-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +61,7 @@ import {MatChipsModule} from '@angular/material/chips';
     RegisterComponent,
     NavbarfakeComponent,
     DialogAddBoardComponent,
+    BoardCardHomeComponent,
 
 
 
@@ -95,7 +98,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatChipsModule
   ],
 
-  providers: [AuthGuard],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

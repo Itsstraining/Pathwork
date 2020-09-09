@@ -1,32 +1,38 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase'
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User} from '../models/user.model';
-import * as fire from 'firebase'
+import { User } from '../models/user.model';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authState:firebase.User = null;
-  public user:firebase.User= null;
+  public authState: firebase.User = null;
+  public user: firebase.User = null;
   user$: Observable<User>;
+  haveUser = false
   constructor(
-    private afAuth:AngularFireAuth,
+    private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router
   ) {
-    this.afAuth.authState.subscribe(data => this.authState = data);
-   }
-   public checkCurrentUser(){
+    this.afAuth.authState.subscribe(data => {
+      this.authState = data;
+      console.log(this.authState.uid);
+      this.haveUser = true;
+    });
+    this.checkCurrentUser();
+  }
+  public checkCurrentUser() {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
+      switchMap((user) => {
 
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+
+          return 'true';
         } else {
 
           return of(null);
@@ -35,7 +41,7 @@ export class AuthService {
     )
   }
 
-   updateUserData({uid, email, photoURL}:User) {
+  updateUserData({ uid, email, photoURL }: User) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`);
     const data = {
       uid,

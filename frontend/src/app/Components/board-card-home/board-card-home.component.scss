@@ -1,0 +1,36 @@
+.inli{
+    padding: 5px;
+  }
+
+  .board-img{
+    border-radius: 3px;
+    display: block;
+    border: none;
+    position: relative;
+    text-decoration: none;
+    background-size: cover;
+    background-position: 50%;
+    background-position-x: 50%;
+    background-position-y: center;
+    cursor: pointer;
+    background-color: rgb(93, 188, 210);
+    width: 200px;
+    height: 130px;
+    line-height: 20px;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  
+  .board-img:hover{
+    opacity: 0.6;
+  }
+
+  .wordintable{
+    position: absolute;
+    text-align: left;
+    top: 5px;
+    left: 5px;
+    color: white;
+    font-size: large;
+    font-weight: 700;
+  }

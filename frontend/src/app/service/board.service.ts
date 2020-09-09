@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './auth.service';
 const fieldValue = firebase.firestore.FieldValue
 
 @Injectable({
@@ -12,8 +13,8 @@ const fieldValue = firebase.firestore.FieldValue
 })
 export class BoardService {
 
-  constructor(private _snackBar: MatSnackBar,public afs: AngularFirestore, private afAuth: AngularFireAuth,private http:HttpClient) { }
-
+  constructor(private auth: AuthService, private _snackBar: MatSnackBar,public afs: AngularFirestore, private afAuth: AngularFireAuth,private http:HttpClient) { }
+ 
   async addBoard(title: string) {
     return await this.afs.collection("board").add({
       "title": title,
@@ -21,6 +22,10 @@ export class BoardService {
     })
   }
 
+  checkUID()
+  {
+    console.log(this.auth.authState.uid);
+  }
   async addSharedUser(bid: string, stringEmail: Array<string>) {
     //call api with body -> bid and arrayEmail
      return await this.http.put(environment.endpoint+"/v1/board/shared", {

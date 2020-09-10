@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
         })
       }
     ).catch(()=>{
-      this.snackBar.open('You fucking shit type wrong','OK' ,{duration: 2000})
+      this.snackBar.open('You have successfully registered','OK' ,{duration: 2000})
     })
   }
   public signout() {

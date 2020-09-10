@@ -18,7 +18,7 @@ app.get("/ping", (req, res) => {
 app.use(bodyParser());
 app.use('/v1/user',require('./router/user.router'));
 app.use('/v1/board', require('./router/board.router'));
-app.listen(7762, "127.0.0.1", () => {
+app.listen(7762, () => {
   console.log("server is running");
 });
 app.post("/v1/board", async (req, res) => {

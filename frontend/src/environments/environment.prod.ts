@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  endpoint: "http://127.0.0.1:7762",
+  endpoint: "https://pathwork-itss.herokuapp.com",
   firebase:{
     apiKey: "AIzaSyBYsO2FQUGwRjucjYOSXGG9zs7DXFbfQ_o",
     authDomain: "trello-server-326e2.firebaseapp.com",

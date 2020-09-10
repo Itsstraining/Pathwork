@@ -18,9 +18,7 @@ app.get("/ping", (req, res) => {
 app.use(bodyParser());
 app.use('/v1/user',require('./router/user.router'));
 app.use('/v1/board', require('./router/board.router'));
-app.listen(7762, () => {
-  console.log("server is running");
-});
+
 app.post("/v1/board", async (req, res) => {
   const list = req.body;
   try {
@@ -115,5 +113,9 @@ app.delete("/v1/board/:task", async (req, res) => {
     await admin.firestore().collection("board").doc(task).delete();
     res.send(list.task + " is deleted");
   }
+});
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("server is running");
 });
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: "http://127.0.0.1:7762",
+  endpoint: "http://localhost:3000",
   firebase:{
     apiKey: "AIzaSyBYsO2FQUGwRjucjYOSXGG9zs7DXFbfQ_o",
     authDomain: "trello-server-326e2.firebaseapp.com",

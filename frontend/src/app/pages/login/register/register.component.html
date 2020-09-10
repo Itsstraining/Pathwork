@@ -70,6 +70,6 @@
             <a [routerLink]="['signin']" target="_blank"> Chính sách Quyền riêng tư của Pathwork</a>
             <br>
             <span> Nếu bạn đã có tài khoản Pathwork - > </span>
-            <button mat-raised-button color="primary"><a [routerLink]="['signin']"  style="color: white;">Đăng nhập</a></button>
+            <button (click)="dangnhapClick()" mat-raised-button color="primary"><a [routerLink]="['signin']"  style="color: white;">Đăng nhập</a></button>
         </div>
     </div>

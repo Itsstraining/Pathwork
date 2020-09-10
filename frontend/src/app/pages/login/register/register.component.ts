@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
       .then(() => {
         this.snackBar.open('Success!', 'OK', { duration: 2000 });
-        this.router.navigate(['./navbar']);
+        this.router.navigate(['navbar']);
       })
       .catch((err) => {
         this.snackBar.open(err, 'OK', { duration: 2000 });
@@ -77,16 +77,19 @@ export class RegisterComponent implements OnInit {
   }
   public signout() {
     this.afAuth.signOut();
-    this.router.navigate(['/signin']);
+    this.router.navigate(['signin']);
   }
   signin() {
     this.afAuth.signInWithEmailAndPassword(this.email.value, this.password.value).then(() => {
       this.snackBar.open('Success!', 'OK', { duration: 2000 });
-      this.router.navigate(['./navbar']);
+      this.router.navigate(['navbar']);
     }).catch((err) => {
       this.snackBar.open(err, 'OK', { duration: 2000 });
     });
 
   }
 
+    dangnhapClick(){
+      this.router.navigate(["signin"]);
+    }
 }

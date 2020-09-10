@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>Add New Board</h1>
+<h1 mat-dialog-title>Edit Board</h1>
 <div mat-dialog-content style="display: flex; flex-direction: column;">
     <mat-form-field appearance="outline">
-        <mat-label>Add Title</mat-label>
-        <input  matInput [formControl]="titleControl" placeholder="Add title">
+        <mat-label>Edit Title</mat-label>
+        <input  matInput [formControl]="titleControl" placeholder="Edit title">
 
     </mat-form-field>
     <mat-form-field  appearance="outline">
@@ -16,7 +16,7 @@
               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
             <input style="height: 50px;"
-              placeholder="Add Email"
+              placeholder="Edit Email"
               #emailInput
               [formControl]="emailSharedControl"
               [matChipInputFor]="chipList"
@@ -27,6 +27,6 @@
     </mat-form-field>
 </div>
 <div mat-dialog-actions style="display: flex; justify-content: flex-end">
-    <button mat-stroked-button class="button-confirm" (click)="cancelClick()">Cancel</button>
-    <button mat-stroked-button style="background-color:limegreen; color: white;" (click)="addClick()" class="button-confirm" >Add</button>
+    <button mat-stroked-button class="button-confirm" (click)="cancelClick()" >Cancel</button>
+    <button mat-stroked-button style="background-color:limegreen; color: white;" class="button-confirm" (click) = "cancelClick()" >Save</button>
 </div>

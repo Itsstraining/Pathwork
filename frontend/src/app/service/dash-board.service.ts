@@ -7,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class DashBoardService {
 
 async updateTabCard(tabUUID, items) {
+  console.log(tabUUID + "---" + items);
   return await this.afs.collection("cards").doc(tabUUID).update({
     "messages": items
   })

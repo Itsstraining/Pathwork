@@ -8,13 +8,14 @@ import {BoardService} from "../../service/board.service"
 import { AuthService } from 'src/app/service/auth.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   templateUrl: './dialog-add-board.component.html',
   styleUrls: ['./dialog-add-board.component.scss']
 })
 export class DialogAddBoardComponent implements OnInit {
 
-  constructor(public boardService: BoardService, public auth: AuthService) {
+  constructor(public boardService: BoardService, public auth: AuthService, private dialogref: MatDialogRef<DialogAddBoardComponent>) {
    }
   titleControl: FormControl = new FormControl("");
   ngOnInit(): void {
@@ -30,10 +31,12 @@ export class DialogAddBoardComponent implements OnInit {
       let boardId = docref.id;
       this.boardService.addBoardOwner(boardId, this.auth.authState.uid);
       this.boardService.addSharedUser(boardId, this.arraySharedEmail);
-      
+      this.dialogref.close()
     })
   }
-
+  cancelClick(){
+    this.dialogref.close();
+  }
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];

@@ -2,13 +2,15 @@
 <div class="list-container" cdkDropListGroup>
     <app-list *ngFor="let list of lists"></app-list>
 </div> -->
-<app-navbar></app-navbar>
+<app-navbar style="position: fixed; width: 100%; margin-bottom: 50px;"></app-navbar>
 
-
-<button (click)="addList()" mat-raised-button color="primary">Add List</button>
+<div style="padding-top: 70px;">
+    <button (click)="addList()" mat-raised-button color="primary">Add List</button>
 <div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)" class="list-container" cdkDropListGroup>
     <app-list [tabUUID]="tab" *ngFor="let tab of lists"  cdkDragLockAxis="x" cdkDrag></app-list>
 </div>
+</div>
+
 
 
 

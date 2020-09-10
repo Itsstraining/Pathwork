@@ -83,7 +83,7 @@ export class SigninComponent implements OnInit {
   }
   public signout() {
     this.afAuth.signOut();
-    this.router.navigate(['/signin']);
+    this.router.navigate(['signin']);
   }
   signin() {
     console.log(this.emailControl);

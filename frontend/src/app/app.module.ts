@@ -41,6 +41,12 @@ import {MatCardModule} from '@angular/material/card';
 import { NavbarfakeComponent } from './pages/navbarfake/navbarfake.component';
 import {AuthGuard} from "./Guards/auth.guard";
 import { HttpClientModule } from '@angular/common/http';
+import { DialogAddBoardComponent } from './Components/dialog-add-board/dialog-add-board.component';
+import {MatChipsModule} from '@angular/material/chips';
+import { AuthService } from './service/auth.service';
+import { BoardCardHomeComponent } from './Components/board-card-home/board-card-home.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DialogEditBoardComponent } from './Components/dialog-edit-board/dialog-edit-board.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +63,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     RegisterComponent,
     NavbarfakeComponent,
+    DialogAddBoardComponent,
+    BoardCardHomeComponent,
+    DialogEditBoardComponent,
 
 
 
@@ -89,10 +98,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatChipsModule,
+    MatExpansionModule
   ],
 
-  providers: [AuthGuard],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

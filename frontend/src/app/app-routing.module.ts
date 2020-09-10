@@ -15,7 +15,7 @@ const routes: Routes = [
     component: SigninComponent,
   },
   {
-    path:'board',
+    path:'board/:bid',
     component: BoardComponent,
     // canActivate: [AuthGuard]
   },

@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const firebaseHelper = require('firebase-functions-helper/dist');
-
+const auth = admin.auth();
 const db = admin.firestore();
 const collectionName = 'users';
 
@@ -59,23 +59,35 @@ module.exports.deleteIduser = (req, res) => {
     .catch(err => res.status(400).send('Error'));
 };
 
-module.exports.getUserbyid =  (req, res) => {
+module.exports.getUserbyid = (req, res) => {
   let iduser = req.query.uid;
-  db.collection('users').doc(iduser).get().then(data => { console.log(data.data())
-  res.status(200).send(data.data()) 
+  db.collection('users').doc(iduser).get().then(data => {
+    console.log(data.data())
+    res.status(200).send(data.data())
   })
-  
+
 };
 
-module.exports.updateUserid = (req,res) =>{
+module.exports.updateUserid = (req, res) => {
   console.log("----running put user")
   let uid = req.body.uid;
-  db.collection('users').doc(uid).set({
-    name:req.body.name,
-    email:req.body.email,
-    photourl:req.body.photourl
-  }).then(()=>{
-    res.status(200).send("ok")
+  let userRef = db.collection('users').doc(uid);
+  userRef.get().then(docref => {
+    if (docref.exists) {
+      res.status(200).send("ok")
+    }
+    else {
+      userRef.set({
+        name: req.body.name,
+        email: req.body.email,
+        boardOwner: [],
+        boardShared: [],
+        photourl: req.body.photourl
+      }).then(() => {
+        res.status(200).send("ok")
+      })
+    }
   })
-  
 };
+
+

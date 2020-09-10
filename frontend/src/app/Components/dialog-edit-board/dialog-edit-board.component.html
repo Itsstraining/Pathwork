@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Edit Board</h1>
+<div mat-dialog-content style="display: flex; flex-direction: column;">
+    <mat-form-field appearance="outline">
+        <mat-label>Edit Title</mat-label>
+        <input  matInput [formControl]="titleControl" placeholder="Edit title">
+
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+        <mat-chip-list #chipList >
+            <mat-chip
+              *ngFor="let email of arraySharedEmail"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(email)">
+              {{email}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input style="height: 50px;"
+              placeholder="Edit Email"
+              #emailInput
+              [formControl]="emailSharedControl"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+
+    </mat-form-field>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: flex-end">
+    <button mat-stroked-button class="button-confirm" (click)="cancelClick()" >Cancel</button>
+    <button mat-stroked-button style="background-color:limegreen; color: white;" class="button-confirm" (click) = "cancelClick()" >Save</button>
+</div>

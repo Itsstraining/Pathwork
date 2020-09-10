@@ -22,6 +22,7 @@ interface Board {
 export class SidebarComponent implements OnInit {
 
   constructor(private afAuth:AngularFireAuth,public board: BoardService ,public auth: AuthService, public afs: AngularFirestore, private router: Router, public dialog: MatDialog) { }
+  panelOpenState = true;
   listOwn = [];
   listShare = [];
   uid:string;
@@ -38,25 +39,13 @@ export class SidebarComponent implements OnInit {
     this.afAuth.user.subscribe(
       user =>{
         this.uid = user.uid;
-        this.afs.collection("users").doc(this.uid).get().subscribe(userref => {
+        this.afs.collection("users").doc(this.uid).snapshotChanges().subscribe(userref => {
 
 
-          let userrefdata = userref.data();
-          let arrayBoardOwn = userrefdata['boardOwner'] as Array<string>;
-          let arraBoardShare = userrefdata['boardShared'] as Array<string>;
-          let boardref = this.afs.collection("board");
-          //parse array board id to data (title, bid, shared)
-          arrayBoardOwn.forEach(element => {
-            boardref.doc(element).snapshotChanges().subscribe((board =>{
-              let boarddata = board.payload.data();
-              let boardpush:Board = {
-                title : boarddata['title'],
-                bid : board.payload.id,
-                sharedArray : boarddata['shared']
-              } 
-              this.listOwn.push(boardpush)
-            }))
-          });
+          let userrefdata = userref.payload.data();
+          this.listOwn = userrefdata['boardOwner'] as Array<string>;
+          this.listShare = userrefdata['boardShared'] as Array<string>;
+          
           // arraBoardShare.forEach(element =>{
           //    boardref.doc(element).snapshotChanges().subscribe((board =>{
           //     let boarddata = board.payload.data();
@@ -73,6 +62,10 @@ export class SidebarComponent implements OnInit {
     )
     
 
+  }
+  clickExpansionPanel()
+  {
+    
   }
   gotoSth(name: string) {
     this.router.navigate([`${name}`]);

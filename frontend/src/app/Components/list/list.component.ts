@@ -17,10 +17,11 @@ export class ListComponent implements OnInit {
   constructor(public afs:AngularFirestore, public dashboardservice: DashBoardService) { }
 
   ngOnInit(): void {
-    console.log(this.tabUUID)
-    this.afs.collection("cards").doc(this.tabUUID) .snapshotChanges().subscribe((card)=>{
-      this.items = card.payload.get("messages") // Correct array Index
-      // console.log(this.items)
+    //console.log(this.tabUUID)
+    this.afs.collection("cards").doc(this.tabUUID).snapshotChanges().subscribe((card)=>{
+      this.items = card.payload.get("messages")
+       // Correct array Index
+       console.log(this.items)
       this.tiltleControl.setValue(card.payload.get("title"));
     })
   }
@@ -28,7 +29,7 @@ export class ListComponent implements OnInit {
   tiltleControl = new FormControl("");
   saveTiltle()
   {
-      console.log(this.tiltleControl.value);
+      //console.log(this.tiltleControl.value);
       this.afs.collection("cards").doc(this.tabUUID).update({"title": this.tiltleControl.value});
   }
   moveCard(event:CdkDragExit<string[]>){
@@ -42,7 +43,7 @@ export class ListComponent implements OnInit {
   async drop(event: CdkDragDrop<string[]>) {
 
     if (event.previousContainer === event.container) {
-      console.log("DROP")
+      //console.log("DROP")
       moveItemInArray(
         event.container.data,
         event.previousIndex,
@@ -55,13 +56,15 @@ export class ListComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+        console.log(event.previousContainer.id);
+        console.log(event.container.id);
         await this.dashboardservice.updateTabCard(event.previousContainer.id, event.previousContainer.data);
         await this.dashboardservice.updateTabCard(event.container.id, event.container.data);
-        //console.log(this.tabUUID)
-        console.log(event.previousContainer.id)
+        console.log(this.tabUUID)
+        //console.log(event.previousContainer.id)
         // uuid card
         // data []
-        console.log(event.container.data)
+        //console.log(event.container.data)
         console.log(this.items)
 
         // console.log(event.container.id)

@@ -34,10 +34,7 @@ export class BoardService {
     }).toPromise().then(value =>{
       //console.log(value);
       this.openSnackBar("OK", "")
-    }).catch(err => {
-      //console.log(err);
-      this.openSnackBar("Oh No! Some thing wrong !!!", "")
-    })
+    });
   }
 
   async addBoardOwner(Bid: string, uid: string) {

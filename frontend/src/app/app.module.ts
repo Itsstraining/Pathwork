@@ -45,6 +45,9 @@ import { DialogAddBoardComponent } from './Components/dialog-add-board/dialog-ad
 import {MatChipsModule} from '@angular/material/chips';
 import { AuthService } from './service/auth.service';
 import { BoardCardHomeComponent } from './Components/board-card-home/board-card-home.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DialogEditBoardComponent } from './Components/dialog-edit-board/dialog-edit-board.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +65,7 @@ import { BoardCardHomeComponent } from './Components/board-card-home/board-card-
     NavbarfakeComponent,
     DialogAddBoardComponent,
     BoardCardHomeComponent,
+    DialogEditBoardComponent,
 
 
 
@@ -95,7 +99,8 @@ import { BoardCardHomeComponent } from './Components/board-card-home/board-card-
     MatSelectModule,
     MatCardModule,
     HttpClientModule,
-    MatChipsModule
+    MatChipsModule,
+    MatExpansionModule
   ],
 
   providers: [AuthGuard, AuthService],

@@ -27,7 +27,7 @@
                     <mat-icon>keyboard_arrow_up</mat-icon>
                   </button>
                 <ul class="ultable">
-                    <app-board-card-home *ngFor="let item of listOwn" [bid] = "item.bid"></app-board-card-home>
+                    <app-board-card-home *ngFor="let item of listOwn" [bid] = "item"></app-board-card-home>
                    
                     <li class="inli">
                         <button style="padding: 8px;" (click)="openDialogAddBoard()" class="newboard"><a
@@ -40,10 +40,8 @@
                 <mat-icon class="icon">person</mat-icon>
                 <h3 class="font">Bảng Được Chia Sẻ</h3>
                 <ul class="ultable">
-                    <li class="inli">
-                        <button style="padding: 8px;" class="board-img" (click)="gotoSth('board')"><a
-                                class="wordintable">Shopping</a></button>
-                    </li>
+                    <app-board-card-home *ngFor = "let id of listShare" [bid] = id>
+                    </app-board-card-home>
 
                 </ul>
 

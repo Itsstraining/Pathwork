@@ -1,5 +1,6 @@
 .inli{
     padding: 5px;
+    position: relative;
   }
 
   .board-img{
@@ -34,3 +35,14 @@
     font-size: large;
     font-weight: 700;
   }
+
+.button-menu{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: black;
+}
+
+.button-menu:focus{
+outline: none !important;
+}

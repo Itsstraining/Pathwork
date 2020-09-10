@@ -9,20 +9,25 @@ module.exports.shareBoardUserEmail = (req, res) => {
     let bid = req.body.bid;
     //parse array email to array object email
     try {
+
+        db.collection("board").doc(bid).set({
+            "sharedId": arrayEmail
+        }, { merge: true });
         arrayEmail = arrayEmail.map(element => {
             return { "email": element };
         });
         console.log(arrayEmail);
+
         auth.getUsers(arrayEmail).then(userRecord => {
 
             //sau khi da xac minh voi firebase rang user ton tai
             //thi chung ta thuc hien them boardid vao tung doc uid tuong ung
-            // console.log(userRecord.users);
-            // userRecord.users.forEach(user => {
-            //     db.collection("users").doc(user.uid).update({
-            //         "boardShared": admin.firestore.FieldValue.arrayUnion(bid)
-            //     })
-            // })
+            console.log(userRecord.users);
+            userRecord.users.forEach(user => {
+                db.collection("users").doc(user.uid).update({
+                    "boardShared": admin.firestore.FieldValue.arrayUnion(bid)
+                })
+            })
         }).then(()=>{
             res.status(200).send("OK");
         })
